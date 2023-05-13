@@ -14,5 +14,30 @@ use App\Http\Controllers\TodosController;
 |
 */
 
-Route::get('/', [TodosController::class, 'liste']);
-Route::post('/action/add', [TodosController::class, "saveTodo"]);
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/se-co', function () {
+    return view('se-co');
+});
+
+Route::get('/connection', function () {
+    return view('connection');
+});
+
+Route::get('/compte-client', function () {
+    return view('compte-client');
+});
+
+Route::get('/compte-artiste', function () {
+    return view('compte-artiste');
+});
+
+Route::get('/info', function () {
+    return view('info');
+});

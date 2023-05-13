@@ -1,6 +1,39 @@
-body {
-    padding-top: 5rem;
-  }
+* {
+  margin: 0;
+  padding: 0;
+} 
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type : none;
+}
+
+hr {
+  background: #d9534f;
+  border-left: 2px solid #d9534f;
+  height: 130px;
+}
+
+.center-video {
+  display: flex;
+  justify-content: center;
+}
+
+video::-webkit-media-controls {
+  display:none !important;
+}
+video::-webkit-media-controls-enclosure {
+  display:none !important;
+}
+video::-webkit-media-controls-panel {
+  display:none !important;
+}
+
   
   form.add {
     padding-bottom: 10px;
@@ -16,4 +49,256 @@ body {
   
   .oi {
     font-size: small;
+  }
+
+  #centrelogo2 {
+    width: 11rem;
+}
+
+#logocentre {
+    margin-left:40rem;
+    margin-right: 40rem;
+    margin-bottom: 7.5px;
+}
+
+
+input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  input[type="checkbox"]:checked {
+    background-color: #ccc;
+  }
+  
+  label {
+    margin-left: 10px;
+  }
+
+#vdt {
+    position: relative;
+}
+
+
+#modelelogo {
+    display: block;
+    margin: 0 auto;
+    opacity: 0.5;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+#vente {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 350%;
+}  
+
+
+ #instagram-button img {
+    border: none;
+  }
+
+
+
+button {
+border: none;
+}
+
+
+  /*HEADER*/
+.header {
+    display: flex;
+    align-items: center;
+}
+
+#wrapperhaut {
+    height: 120px;
+}
+
+#wrapperhaut2 {
+    height: 70px;
+}
+
+
+
+img#droiteprofil {
+    width: 80px;
+    margin-left: 9rem;
+}
+
+/*CATÉGORIES*/
+
+img#user {
+    display: flex;
+    width: 30px;
+}
+
+#like1, #like2, #like3, #like4, #like5, #like6, #like7, #like8, #like9, #like10, #like11, #like12,
+#like13, #like14, #like15, #like16, #like17, #like18, #like19, #like20, #like21, #like22, #like23, 
+#like24, #like25, #like26, #like27, #like28, #like29, #like30,
+#like {
+    width: 30px;
+}
+
+
+
+img#comm {
+    width: 30px;
+}
+
+img#panier {
+    width: 30px;
+}
+
+img#arrow {
+    width: 30px;
+}
+
+/*FOOTER*/
+
+
+
+
+
+/*
+.vertical-line{
+    display: flex;
+    border-left: 2px solid #ffffff;
+    display: inline-block;
+    height: 130px;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    margin-top: 25px;
+  }
+  */
+
+
+
+/* styles pour la barre de recherche */
+#filtre {
+    display: flex;
+}
+
+
+#searchbar {
+    display: flex;
+    width: 115%;
+    max-width: 745px;
+    }
+
+/* styles pour le filtre */
+#modifiltre {
+    width: 250px;
+    margin-top: 20px;
+    max-width: 150px;
+}
+    
+/* styles pour les écrans plus petits */
+@media (max-width: 300px) {
+    #searchbar {
+    width: 130%;
+    max-width: 300px;
+    }   
+}
+
+/*style élément wrapperbas*/
+#wrapperbas {
+    height: 180px;
+    width: 100%;
+}
+
+#wrapperbas2 {
+    height: 180px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+#wrapperquisommesnous {
+    display: flex;
+    block-size: 150px;
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+#facebook {
+    width: 70px;
+}
+
+#twitter {
+    width: 70px;
+}
+
+#insta {
+    width: 70px;
+}
+
+#quisommesnous {
+    font-size: 20px;
+}
+
+img#centrelogo {
+    width: 11rem;
+}
+
+#fondlogo{
+    justify-content: center;
+    align-items: center;
+}
+
+#info {
+    font-size: 15px;
+    margin-top: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    #wrapperbas {
+    height: 90px;
+    }
+    #wrapperquisommesnous {
+    block-size: 55px;
+    width: 100%;
+    max-width: 150px;
+    }
+    #quisommesnous {
+    font-size: 10px; 
+    }
+    #centrelogo {
+    visibility: hidden;
+    }
+    #fondlogo{
+    visibility: hidden;
+    }
+    #info {
+    margin-top: -40px;
+    font-size: 8px;
+    }  
+}
+
+
+@media (max-width: 767px) {
+    #insta, #twitter, #facebook {
+      max-width: 30px; 
+      height: auto;
+    }
+  }
+
+  /* Pour les écrans de 768px et plus */
+  @media (min-width: 768px) {
+    #insta, #twitter, #facebook {
+      max-width: 70px; 
+      height: auto;
+    }
   }
