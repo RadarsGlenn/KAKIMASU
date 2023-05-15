@@ -35,32 +35,37 @@
 
       <div class="row">
 		<div class="col-md-6">
-			<div class="ms-3">
+			<div id="créer_un_compte" class="ms-3">
 				<h4 class="text-danger">Compte Artiste</h4>
 				<hr>
-				<form action="{{ url('/compte-artiste') }}" method="post" class="d-flex flex-column">
+				<form action="{{ url('/compte-artiste') }}" method="POST" class="d-flex flex-column">
+					@csrf
 					<div class="mb-3">
 						<label class="text-danger" for="username">PSEUDO</label>
-						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true"><span class="visually-hidden">Ce champ est requis</span>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
 						<input type="text" id="username" name="username" required autocomplete="username" style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="email">EMAIL</label>
-						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true"><span class="visually-hidden">Ce champ est requis</span>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
 						<input type="email" id="email" name="email" required style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="password">Mot de passe</label>
-						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true"><span class="visually-hidden">Ce champ est requis</span>				
-						<input type="password" id="password" name="password" required style="width: 90%;">
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="password" id="password" name="password" class="form-control" required autocomplete="new-password" required style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="confirm_password">Confirmation du mot de passe</label>
-						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true"><span class="visually-hidden">Ce champ est requis</span>
-						<input type="password" id="confirm_password" name="confirm_password" required style="width: 90%;">
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="password" id="confirm_password" name="confirm_password" class="form-control" required style="width: 90%;">
 					</div>
 					<div class="d-flex align-items-center">
-						<input type="checkbox" id="monCarre">
+						<input type="checkbox" id="monCarre" name="remember_me">
 						<label class="ms-2" for="monCarre">Se souvenir de moi</label>
 						<div class="ms-3">
 							<button type="submit" class="btn btn-danger btn-sm text-dark">Créer Mon Compte</button>
@@ -70,7 +75,7 @@
 						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-3" style="max-width: 15px;">
 						<p>champs obligatoires</p>
 					</div>
-				</form>			
+				</form>         
 				<a href="{{ url('/se-co') }}" class="btn btn-secondary">Retour</a>
 			</div>
 		</div>
@@ -78,7 +83,7 @@
 			<div class="ms-3">
 				<h4 class="text-danger">Compte Client</h4>
 				<hr>
-				<form action="{{ url('/compte-artiste') }}" method="post" class="d-flex flex-column">
+				<form action="{{ url('/compte-artiste') }}" method="POST" class="d-flex flex-column">
 					<div class="mb-3">
 						<label class="text-danger" for="username">EMAIL</label> <img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;"><br>
 						<input type="text" id="username" name="username" required style="width: 90%;">
@@ -113,7 +118,7 @@
 		<div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas2">
 			<div class="row">
 				<div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
-					<a class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
+					<a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
 				</div>
 				<!--<span class="vertical-line"></span>-->
 				<div class="col-6">
@@ -146,5 +151,38 @@
 			</div>
 		</div>
 	</footer>
+
+	<script>
+		let creer_un_compte = document.getElementById("creer_un_compte");
+
+		creer_un_compte.addEventListener("click", function() {
+			let titre_f = document.getElementById("Titre_formulaire");
+			titre_f.textContent = "Créer un compte";
+
+			let texte_f = document.getElementById("texte_formulaire");
+			texte_f.textContent = "Veuillez entrez les informations";
+
+			let se_co_form = document.getElementById("se_connecter");
+			se_co_form.style.display = "none";
+			let creer_compte_form = document.getElementById("créer_un_compte");
+			creer_compte_form.style.display = "block";
+		});
+
+let se_connecter_boutton = document.getElementById("se_connecter_boutton");
+
+se_connecter_boutton.addEventListener("click", function() {
+    let titre_f = document.getElementById("Titre_formulaire");
+    titre_f.textContent = "Se connecter";
+
+    let texte_f = document.getElementById("texte_formulaire");
+    texte_f.textContent = "Veuillez vous connectez";
+
+    let se_co_form = document.getElementById("se_connecter");
+    se_co_form.style.display = "block";
+    let creer_compte_form = document.getElementById("créer_un_compte");
+    creer_compte_form.style.display = "none";
+});
+	</script>
+
 </body>
 </html>

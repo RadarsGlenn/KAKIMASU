@@ -45,15 +45,23 @@
         <div style="height: 10px;"></div>
     </div>
     
-    
+    <?php 
+
+	if (isset($_POST['submit'])){
+		echo "ok";
+	}
+
+
+
+	?>
 
 
 	<footer>
 		<div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas">
 			<div class="row">
-				<div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
-					<a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
-				</div>
+			<div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
+                  <a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
+              </div>
 				<!--<span class="vertical-line"></span>-->
 				<div class="col-6">
 					<div class="text-center mt-2 bg-white rounded-3" id="fondlogo">

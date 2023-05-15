@@ -40,7 +40,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     
-    <script src="{{ asset('js/like.js') }}"></script>
 
     <!--HEADER-->
 
@@ -121,15 +120,20 @@
               </article>
           </div>
           <div class="d-flex justify-content-start">
+            
               <div class="mt-3">
-                  <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
-                    <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
-                      <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 5px;">
+                  <article class="border border-5 border-dark rounded-sm d-inline-flex me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
+                    <a href="{{ url('/article') }}">
+                        <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
+                    </a>
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 5px;">
                           <div class="d-flex align-items-center justify-content-between">
                             <a class="button" onclick="changeImageLike(1)">
                               <img id="like1" src="{{asset('images/lovely-heart.png')}}" alt="like" style="margin-right: 5px;" />
-                            </a>                            
+                            </a>
+                            <a href="{{ url('/article') }}">                            
                               <img id="comm" src="{{asset('images/comm.png')}}" alt="commentaire" style="margin-right: 5px;" />
+                            </a>
                               <img id="panier" src="{{asset('images/basket-black-shape.png')}}" alt="panier" />
                           </div>
                       </div>
@@ -138,6 +142,7 @@
                       </div>
                   </article>
               </div>
+            
                 
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
@@ -747,7 +752,8 @@
           </div>
       </div>
   </footer>
-
+  <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="{{ asset('js/like.js') }}"></script>-->
   <script>
   function changeImageLike(id) {
   var image = document.getElementById("like" + id);

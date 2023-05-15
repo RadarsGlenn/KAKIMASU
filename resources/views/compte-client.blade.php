@@ -52,7 +52,7 @@
 		<div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas2">
 			<div class="row">
 				<div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
-					<a class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
+					<a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
 				</div>
 				<!--<span class="vertical-line"></span>-->
 				<div class="col-6">
