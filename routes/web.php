@@ -41,3 +41,7 @@ Route::get('/compte-artiste', function () {
 Route::get('/info', function () {
     return view('info');
 });
+
+Route::get('/article', function () {
+    return view('article');
+});

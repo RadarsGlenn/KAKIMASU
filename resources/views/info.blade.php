@@ -32,6 +32,8 @@
 		</div>
 	  </header>
 
+    <a href="{{ url('/home') }}" class="btn btn-secondary mt-3 ms-3">Retour</a>
+
       <h2 class="text-center mt-3">QUI SOMMES NOUS</h2>
 
       <h4 class="text-center mt-3">Kakimasu la nouvelle originalité</h4>
@@ -44,15 +46,17 @@
       </div>
       
       <div class="ms-5 me-5">
-      <div class="ms-5 me-5 mt-3">
-        <p class="text-center">KAKIMASU est une nouvelle entreprise qui a pour but d'aider les artistes en imprimant leurs dessins sur des t-shirts. 
-            Pour cela l'artiste crée son compte sur le site et y dépose ses dessins. Puis il détermine son prix (max 100€).  
-            Ils seront rémunéré 40% du prix du t-shirt lors qu'il sera acheté. </p>
-    
-        <p class="text-center">Si vous cherchez un cadeau original pour un anniversaire par exemple, 
-                un moyen de gagner de l'argent ou même essayez de vous lancer dans une carrière d'artiste, 
-                vous êtes au bon endroit.</p>
-      </div>
+        <div class="ms-5 me-5">
+          <div class="ms-5 me-5 mt-3 mb-3">
+            <p class="text-center">KAKIMASU est une nouvelle entreprise qui a pour but d'aider les artistes en imprimant leurs dessins sur des t-shirts. 
+                Pour cela l'artiste crée son compte sur le site et y dépose ses dessins. Puis il détermine son prix (max 100€).  
+                Ils seront rémunéré 40% du prix du t-shirt lors qu'il sera acheté. </p>
+        
+            <p class="text-center">Si vous cherchez un cadeau original pour un anniversaire par exemple, 
+                    un moyen de gagner de l'argent ou même essayez de vous lancer dans une carrière d'artiste, 
+                    vous êtes au bon endroit.</p>
+          </div>
+        </div>
       </div>
       
 
