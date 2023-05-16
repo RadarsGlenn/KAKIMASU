@@ -22,9 +22,10 @@ class UserAuthenticationController extends Controller
             'password' => Hash::make($password)
         ]);
 
+
         // Autres actions nécessaires après l'enregistrement de l'utilisateur
 
-        return redirect()->route('compte')->with('pseudo', $pseudo);
+        return redirect()->route('compte', ['username' => $pseudo]);
     }
 
     public function compte()

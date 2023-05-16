@@ -75,7 +75,7 @@
 						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-3" style="max-width: 15px;">
 						<p>champs obligatoires</p>
 					</div>
-				</form>         
+				</form>      				   
 				<a href="{{ url('/se-co') }}" class="btn btn-secondary">Retour</a>
 			</div>
 		</div>

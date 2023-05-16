@@ -46,7 +46,7 @@
 			</label>
 			<input id="file-upload" type="file" accept="image/*" style="display: none;">
 		</div>						
-		<h3 style="color: red;">{{ session('pseudo','...') }}</h3>
+		<h3 style="color: red;">{{ $pseudo }}</h3>
         <div style="height: 10px;"></div>
         <a style="display: block; width: 50%; height: 50px; border: 1px solid black; color: red; background-color: white; border-radius: 10px; text-align: center; margin: 0 auto;">Mon panier</a>
 		<div style="height: 10px;"></div>

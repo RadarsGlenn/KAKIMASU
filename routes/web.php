@@ -23,9 +23,11 @@ Route::get('/se-co', function () {
     return view('se-co');
 });
 
-Route::match(['get', 'post'], '/compte', function () {
-    return view('compte');
-});
+Route::match(['get', 'post'], '/compte', function ($pseudo = null) {
+    return view('compte', compact('pseudo'));
+})->name('compte');
+
+
 
 Route::get('/connexion', function () {
     return view('connexion');
