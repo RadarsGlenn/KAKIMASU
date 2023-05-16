@@ -33,24 +33,24 @@
 	  </header>
 
 
-      <div class="row">
+      <div class="row mt-3">
 		<div class="col-md-6">
 			<div id="créer_un_compte" class="ms-3">
 				<h4 class="text-danger">Compte Artiste</h4>
 				<hr>
-				<form action="{{ url('/compte-artiste') }}" method="POST" class="d-flex flex-column">
+				<form action="{{ route('register') }}" method="POST" class="d-flex flex-column">
 					@csrf
 					<div class="mb-3">
 						<label class="text-danger" for="username">PSEUDO</label>
 						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
 						<span class="visually-hidden">Ce champ est requis</span>
-						<input type="text" id="username" name="username" required autocomplete="username" style="width: 90%;">
+						<input type="text" id="username" name="username" class="form-control" required autocomplete="username" style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="email">EMAIL</label>
 						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
 						<span class="visually-hidden">Ce champ est requis</span>
-						<input type="email" id="email" name="email" required style="width: 90%;">
+						<input type="email" id="email" name="email" class="form-control" required style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="password">Mot de passe</label>
@@ -68,7 +68,7 @@
 						<input type="checkbox" id="monCarre" name="remember_me">
 						<label class="ms-2" for="monCarre">Se souvenir de moi</label>
 						<div class="ms-3">
-							<button type="submit" class="btn btn-danger btn-sm text-dark">Créer Mon Compte</button>
+							<button type="submit" class="btn btn-danger btn-sm text-dark" formaction="{{ url('/compte') }}">Créer Mon Compte</button>
 						</div>
 					</div>
 					<div class="d-flex align-items-center">
@@ -83,28 +83,41 @@
 			<div class="ms-3">
 				<h4 class="text-danger">Compte Client</h4>
 				<hr>
-				<form action="{{ url('/compte-artiste') }}" method="POST" class="d-flex flex-column">
+				<form action="{{ route('register') }}" method="POST" class="d-flex flex-column">
+					@csrf
 					<div class="mb-3">
-						<label class="text-danger" for="username">EMAIL</label> <img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;"><br>
-						<input type="text" id="username" name="username" required style="width: 90%;">
+						<label class="text-danger" for="username">PSEUDO</label>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="text" id="username" name="username" class="form-control" required autocomplete="username" style="width: 90%;">
 					</div>
 					<div class="mb-3">
-						<label class="text-danger" for="password">Mot de passe</label> <img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;"><br>
-						<input type="password" id="password" name="password" required style="width: 90%;">
+						<label class="text-danger" for="email">EMAIL</label>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="email" id="email" name="email" class="form-control" required style="width: 90%;">
 					</div>
 					<div class="mb-3">
-						<label class="text-danger" for="password">Confirmation du mot de passe</label> <img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;"><br>
-						<input type="password" id="password" name="password" required style="width: 90%;">
+						<label class="text-danger" for="password">Mot de passe</label>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="password" id="password" name="password" class="form-control" required autocomplete="new-password" required style="width: 90%;">
+					</div>
+					<div class="mb-3">
+						<label class="text-danger" for="confirm_password">Confirmation du mot de passe</label>
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-1" style="max-width: 10px;" aria-hidden="true">
+						<span class="visually-hidden">Ce champ est requis</span>
+						<input type="password" id="confirm_password" name="confirm_password" class="form-control" required style="width: 90%;">
 					</div>
 					<div class="d-flex align-items-center">
-						<input type="checkbox" id="monCarre">
+						<input type="checkbox" id="monCarre" name="remember_me">
 						<label class="ms-2" for="monCarre">Se souvenir de moi</label>
 						<div class="ms-3">
-							<button type="submit" class="btn btn-danger btn-sm text-dark">Créer Mon Compte</button>
+							<button href="{{ url('/compte') }}" type="submit" class="btn btn-danger btn-sm text-dark">Créer Mon Compte</button>
 						</div>
 					</div>
 					<div class="d-flex align-items-center">
-						<img class="mb-3" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 15px;">
+						<img src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid mb-3" style="max-width: 15px;">
 						<p>champs obligatoires</p>
 					</div>
 				</form>	
@@ -115,7 +128,7 @@
     <!--FOOTER-->
 
 	<footer>
-		<div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas2">
+		<div class="bg-danger container-fluid ps-5 pe-5 mt-3" id="wrapperbas">
 			<div class="row">
 				<div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
 					<a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
@@ -168,20 +181,20 @@
 			creer_compte_form.style.display = "block";
 		});
 
-let se_connecter_boutton = document.getElementById("se_connecter_boutton");
+		let se_connecter_boutton = document.getElementById("se_connecter_boutton");
 
-se_connecter_boutton.addEventListener("click", function() {
-    let titre_f = document.getElementById("Titre_formulaire");
-    titre_f.textContent = "Se connecter";
+		se_connecter_boutton.addEventListener("click", function() {
+			let titre_f = document.getElementById("Titre_formulaire");
+			titre_f.textContent = "Se connecter";
 
-    let texte_f = document.getElementById("texte_formulaire");
-    texte_f.textContent = "Veuillez vous connectez";
+			let texte_f = document.getElementById("texte_formulaire");
+			texte_f.textContent = "Veuillez vous connectez";
 
-    let se_co_form = document.getElementById("se_connecter");
-    se_co_form.style.display = "block";
-    let creer_compte_form = document.getElementById("créer_un_compte");
-    creer_compte_form.style.display = "none";
-});
+			let se_co_form = document.getElementById("se_connecter");
+			se_co_form.style.display = "block";
+			let creer_compte_form = document.getElementById("créer_un_compte");
+			creer_compte_form.style.display = "none";
+		});
 	</script>
 
 </body>

@@ -46,13 +46,13 @@
 						<label class="text-danger" for="username">EMAIL<span class="text-danger"></span></label> 
 						<img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;">
 						<br>
-						<input type="text" id="username" name="username" required style="width: 100%;">
+						<input type="email" id="email" name="email" class="form-control" required style="width: 90%;">
 					</div>
 					<div class="mb-3">
 						<label class="text-danger" for="password">Mot de passe<span class="text-danger"></span></label> 
 						<img class="mb-1" src="{{ asset('images/favorites-star.png') }}" alt="star" class="img-fluid" style="max-width: 10px;">
 						<br>
-						<input type="password" id="password" name="password" required style="width: 100%;">
+						<input type="password" id="password" name="password" class="form-control" required autocomplete="new-password" required style="width: 90%;">
 					</div>
 					<div class="d-flex align-items-center">
 						<input type="checkbox" id="monCarre">

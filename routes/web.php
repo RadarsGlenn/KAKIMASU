@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,12 +23,8 @@ Route::get('/se-co', function () {
     return view('se-co');
 });
 
-Route::get('/compte-artiste', function () {
-    return view('compte-artiste');
-});
-
-Route::get('/compte-client', function () {
-    return view('compte-client');
+Route::match(['get', 'post'], '/compte', function () {
+    return view('compte');
 });
 
 Route::get('/connexion', function () {
@@ -45,6 +42,8 @@ Route::get('/article', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

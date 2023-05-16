@@ -8,32 +8,34 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
-
 class UserAuthenticationController extends Controller
 {
     public function register(Request $request)
     {
-        $name = $request->input('name');
+        $pseudo = $request->input('username');
         $email = strtolower($request->input('email'));
         $password = $request->input('password');
 
         $user = User::create([
-            'name' => $name,
+            'username' => $pseudo,
             'email' => $email,
             'password' => Hash::make($password)
         ]);
 
-        $token = $user->createToken('auth_token')->plainTextToken;
+        // Autres actions nécessaires après l'enregistrement de l'utilisateur
 
-        return response()->json([
-            'message' => 'User Account Created Successfully',
-            'access_token' => $token,
-            'token_type' => 'Bearer',
-        ], 201);
-}
+        return redirect()->route('compte')->with('pseudo', $pseudo);
+    }
+
+    public function compte()
+    {
+        return view('compte');
+    }
+
+
 
     public function login(Request $request)
-        {
+    {
         $email = strtolower($request->input('email'));
         $password = $request->input('password');
 
@@ -41,6 +43,7 @@ class UserAuthenticationController extends Controller
             'email' => $email,
             'password' => $password
         ];
+
         if (!Auth::attempt($credentials)) {
             return response()->json([
                 'message' => 'Invalid login credentials'
@@ -54,68 +57,15 @@ class UserAuthenticationController extends Controller
         return response()->json([
             'access_token' => $token,
             'token_type' => 'Bearer',
-        ],200);
+        ], 200);
     }
 
-
-    public function register(Request $request)
-{
-        $name = $request->input('name');
-        $email = strtolower($request->input('email'));
-        $password = $request->input('password');
-
-        $user = User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => Hash::make($password)
-        ]);
-
-        $token = $user->createToken('auth_token')->plainTextToken;
+    public function logout()
+    {
+        auth()->user()->tokens()->delete();
 
         return response()->json([
-            'message' => 'User Account Created Successfully',
-            'access_token' => $token,
-            'token_type' => 'Bearer',
-        ], 201);
-}
-
-
-
-public function login(Request $request)
-{
-    $email = strtolower($request->input('email'));
-    $password = $request->input('password');
-
-    $credentials = [
-        'email' => $email,
-        'password' => $password
-    ];
-    if (!Auth::attempt($credentials)) {
-        return response()->json([
-            'message' => 'Invalid login credentials'
-        ], 401);
+            'message' => 'Successfully Logged out'
+        ], 200);
     }
-
-    $user = User::where('email', $request['email'])->firstOrFail();
-
-    $token = $user->createToken('auth_token')->plainTextToken;
-
-    return response()->json([
-        'access_token' => $token,
-        'token_type' => 'Bearer',
-    ],200);
 }
-
-public function logout()
-{
-    auth()->user()->tokens()->delete();
-
-    return response()->json([
-        'message' => 'Succesfully Logged out'
-    ], 200);
-}
-
-   
-}
-
-

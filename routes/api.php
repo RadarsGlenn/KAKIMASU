@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserAuthenticationController;
 
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -29,6 +30,7 @@ Route::delete('products/{product}', [ProductsController::class, 'destroy'])->nam
 Route::post('login', [UserAuthenticationController::class, 'login']);
 Route::post('register', [UserAuthenticationController::class, 'register']);
 Route::post('logout', [UserAuthenticationController::class, 'logout'])->middleware('auth:sanctum');
+
 
 //These routes are NOT protected using middleware
 

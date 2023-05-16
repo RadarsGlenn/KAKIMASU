@@ -272,6 +272,9 @@ img#centrelogo {
 
 
 @media (max-width: 768px) {
+    #wrapperbas2 {
+    height: 90px;
+    }
     #wrapperbas {
     height: 90px;
     }
