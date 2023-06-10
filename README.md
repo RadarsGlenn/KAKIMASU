@@ -1,6 +1,6 @@
 # 🖌 Projet d'un site internet fictif 🖌
 
-## Résumé et Contexte:
+## 📌 Résumé et Contexte 📌
 
 Kakimasu est un projet de site e-commerce qui vise à vendre des t-shirts avec des designs uniques créés par des artistes abonnés au site. L'objectif de l'entreprise est de proposer des t-shirts de qualité supérieure et de devenir une plateforme reconnue pour les artistes afin qu'ils puissent générer des revenus grâce à leurs créations. Le marché cible comprend les jeunes adultes intéressés par la mode et les vêtements de qualité, ainsi que les amateurs d'art et de design.
 
