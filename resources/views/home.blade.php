@@ -42,66 +42,78 @@
     
 
     <!--HEADER-->
-
+    
     <header>
       <div class="bg-danger container-fluid" id="wrapperhaut">
-          <div class="row">
-              <section class="pt-2 header">
-                  <div class="col-2">
-                      <div class="text-center mt-1 ms-5 bg-white rounded-3">
-                          <img id="centrelogo" src="{{ asset('images/kakimasu_logo.png') }}" alt="Logo">
-                      </div>
-                  </div>
-                  <div class="col-6">
-                      <div class="mt-1 ms-5">
-                          <input class="bg-white border border-3 border-dark rounded-pill p-3" id="searchbar" type="text" name="search" placeholder="Recherche">
-                      </div>
-                  </div>    
-                  <div class="col-1">
-                      <div id="filtre">
-                          <p class="bg-white border border-3 border-dark rounded-pill p-3" id="modifiltre">Filtre</p>
-                      </div>
-                  </div>  
-                  <div class="col-2 align-items-end mt-1">
-                    <a href="{{ url('/se-co') }}">
-                        <img class="button primary" id="droiteprofil" src="{{asset('images/user.png')}}" alt="Profil">
-                    </a>
-                    </div>
-                </section>
+        <div class="row">
+          <section class="pt-2 header text-center"> <!-- Ajout de la classe text-center -->
+            <!-- Navigation bar logo top left -->
+            <div class="col-2">
+              <div class="text-center mt-1 ms-5 bg-white rounded-3">
+                <img id="centrelogo" src="{{ asset('images/kakimasu_logo.png') }}" alt="Logo">
+              </div>
             </div>
+            <!-- Center search bar -->
+            <div class="col-6">
+              <div class="mt-1 ms-5">
+                <input class="bg-white border border-3 border-dark rounded-pill p-3" id="searchbar" type="text" name="search" placeholder="Recherche">
+              </div>
+            </div>    
+            <!-- Filter placed on the right of the searchbar -->
+            <div class="col-1">
+              <div id="filtre">
+                <p class="bg-white border border-3 border-dark rounded-pill p-3" id="modifiltre">Filtre</p>
+              </div>
+            </div>  
+            <!-- Profile button -->
+            <div class="col-2 align-items-end mt-1">
+              <a href="{{ url('/se-co') }}">
+                <img class="button primary" id="droiteprofil" src="{{asset('images/user.png')}}" alt="Profil">
+              </a>
+            </div>
+          </section>
         </div>
-        <div class="mt-3" id="vdt">
-            <img id="modelelogo" src="{{asset('images/White_t-shirt_mockup.jpg')}}" alt="image">
-            <p class="text-center mt-3" id="vente">Ventes de t-shirts</p>
-        </div>
+      </div>
     </header>
+    
+    <!--Image below the navbar allowing the user to understand the theme of the site-->
+    <div class="mt-3" id="vdt">
+      <img id="modelelogo" src="{{asset('images/White_t-shirt_mockup.jpg')}}" alt="image">
+      <p class="text-center" id="vente">Ventes de <br> t-shirts</p>
+    </div>
 
-  <!--CARROUSEL-->
+  <!--CAROUSEL-->
 
   <div class="fs-6 ms-5 me-5 mt-3">
     <h3>Recommandations</h3>
     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" class="d-block w-50 mx-auto" alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('images/mockup/mockup-kage.png')}}" class="d-block w-50 mx-auto" alt="">
-            </div>
-            <div class="carousel-item">
-                <img src="{{asset('images/mockup/mockup-lamu.png')}}" class="d-block w-50 mx-auto" alt="">
-            </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <!-- First carousel image -->
+          <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" class="d-block w-50 mx-auto" alt="">
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        <div class="carousel-item">
+          <!-- Second carousel image -->
+          <img src="{{asset('images/mockup/mockup-kage.png')}}" class="d-block w-50 mx-auto" alt="">
+        </div>
+        <div class="carousel-item">
+          <!-- Third carousel image -->
+          <img src="{{asset('images/mockup/mockup-lamu.png')}}" class="d-block w-50 mx-auto" alt="">
+        </div>
+      </div>
+      <!-- Left button to navigate the carousel backward-->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <!-- Right button to navigate the carousel forward-->
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
   </div>
+  
   
   
   <!--CATÉGORIES-->
@@ -110,8 +122,8 @@
       <div class="fs-6 ms-5 me-5">
 
           <!--TENDANCES-->
-
-          <div class="d-flex justify-content-between mt-3">
+            
+          <div class="tendances-container d-flex justify-content-between mt-3">
               <article class="text-black"> 
                   <p class="h3">Tendances</p>
               </article>
@@ -119,8 +131,14 @@
                   <p class="h5">voir tout</p>
               </article>
           </div>
+          <div class="articles-container">
+            <!-- Carré de tendance -->
+            <div class="tendance-box">
+              <p class="tendance-label">Tendance</p>
+            </div>
+
           <div class="d-flex justify-content-start">
-            
+            <!--Article 1-->
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <a href="{{ url('/article') }}">
@@ -143,7 +161,7 @@
                   </article>
               </div>
             
-                
+            <!--Article 2-->  
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <img src="{{asset('images/mockup/mockup-kage.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -161,6 +179,7 @@
                   </div>
                   </article>
               </div>
+            <!--Article 3-->
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <img src="{{asset('images/mockup/mockup-lamu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -178,6 +197,7 @@
                   </div>
                   </article>
               </div>
+            <!--Article 4-->
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <img src="{{asset('images/mockup/mockup-thorfinn.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -195,6 +215,7 @@
                   </div>
                   </article>
               </div>
+            <!--Article 5-->
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <img src="{{asset('images/mockup/mockup-tristepin.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -212,6 +233,7 @@
                   </div>
                   </article>
               </div>
+            <!--Article 6-->  
               <div class="mt-3">
                   <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                     <img src="{{asset('images/mockup/mockup-zoro.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -233,18 +255,26 @@
                 <img id="arrow" src="{{asset('images/arrow-right.png')}}" alt="flèche">
               </article>
           </div>
+          </div>
           
           <!--DERNIERES SORTIES-->
 
-          <div class="d-flex justify-content-between mt-3">
+          <div class="tendances-container d-flex justify-content-between mt-3">
             <article class="text-black"> 
-                <p class="h3">Tendances</p>
+                <p class="h3">Dernières sorties</p>
             </article>
             <article class="text-danger me-3">
                 <p class="h5">voir tout</p>
             </article>
         </div>
+        <div class="articles-container">
+          <!-- Carré de tendance -->
+          <div class="tendance-box">
+            <p class="tendance-label">Dernières sorties</p>
+          </div>
+
         <div class="d-flex justify-content-start">
+            <!--Article 7-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -262,7 +292,7 @@
                     </div>
                 </article>
             </div>
-              
+            <!--Article 8-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-kage.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -280,6 +310,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 9-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-lamu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -297,6 +328,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 10-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-thorfinn.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -314,6 +346,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 11-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-tristepin.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -331,6 +364,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 12-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-zoro.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -352,18 +386,25 @@
               <img id="arrow" src="{{asset('images/arrow-right.png')}}" alt="flèche">
             </article>
         </div>
+        </div>
 
           <!--LES PLUS REGARDÉS-->
 
-          <div class="d-flex justify-content-between mt-3">
+          <div class="tendances-container d-flex justify-content-between mt-3">
             <article class="text-black"> 
-                <p class="h3">Tendances</p>
+                <p class="h3">Les plus regardés</p>
             </article>
             <article class="text-danger me-3">
                 <p class="h5">voir tout</p>
             </article>
         </div>
+        <div class="articles-container">
+          <!-- Carré de tendance -->
+          <div class="tendance-box">
+            <p class="tendance-label">Les plus regardés</p>
+          </div>
         <div class="d-flex justify-content-start">
+            <!--Article 13-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -381,7 +422,7 @@
                     </div>
                 </article>
             </div>
-              
+            <!--Article 14-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-kage.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -399,6 +440,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 15-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-lamu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -416,6 +458,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 16-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-thorfinn.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -433,6 +476,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 17-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-tristepin.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -450,6 +494,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 18-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-zoro.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -471,17 +516,24 @@
               <img id="arrow" src="{{asset('images/arrow-right.png')}}" alt="flèche">
             </article>
         </div>
+        </div>
 
           <!--LES PLUS LIKÉS-->
 
-          <div class="d-flex justify-content-between mt-3">
+          <div class="tendances-container d-flex justify-content-between mt-3">
             <article class="text-black"> 
-                <p class="h3">Tendances</p>
+                <p class="h3">Les plus likés</p>
             </article>
             <article class="text-danger me-3">
                 <p class="h5">voir tout</p>
             </article>
         </div>
+        <div class="articles-container">
+          <!-- Carré de tendance -->
+          <div class="tendance-box">
+            <p class="tendance-label">Les plus likés</p>
+          </div>
+        <!--Article 19-->
         <div class="d-flex justify-content-start">
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
@@ -500,7 +552,7 @@
                     </div>
                 </article>
             </div>
-              
+            <!--Article 20-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-kage.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -518,6 +570,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 21-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-lamu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -535,6 +588,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 22-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-thorfinn.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -552,6 +606,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 23-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-tristepin.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -569,6 +624,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 24-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-zoro.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -590,18 +646,25 @@
               <img id="arrow" src="{{asset('images/arrow-right.png')}}" alt="flèche">
             </article>
         </div>
+        </div>
 
           <!--LES PLUS ACHETÉS-->
 
-          <div class="d-flex justify-content-between mt-3">
+          <div class="tendances-container d-flex justify-content-between mt-3">
             <article class="text-black"> 
-                <p class="h3">Tendances</p>
+                <p class="h3">Les plus achetés</p>
             </article>
             <article class="text-danger me-3">
                 <p class="h5">voir tout</p>
             </article>
         </div>
+        <div class="articles-container">
+          <!-- Carré de tendance -->
+          <div class="tendance-box">
+            <p class="tendance-label">Les plus achetés</p>
+          </div>
         <div class="d-flex justify-content-start">
+            <!--Article 25-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-haikyuu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -619,7 +682,7 @@
                     </div>
                 </article>
             </div>
-              
+            <!--Article 26-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-kage.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -637,6 +700,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 27-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-lamu.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -654,6 +718,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 28-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-thorfinn.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -671,6 +736,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 29-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-tristepin.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -688,6 +754,7 @@
                 </div>
                 </article>
             </div>
+            <!--Article 30-->
             <div class="mt-3">
                 <article class="border border-5 border-dark rounded-sm d-inline-flex align-items-center me-3 mb-3" style="height: 200px; width: 200px; position: relative;">
                   <img src="{{asset('images/mockup/mockup-zoro.png')}}" alt="mockup-haikyuu" style="position: absolute; height: 100%; width: 100%; object-fit: cover; object-position: center;">
@@ -709,49 +776,56 @@
                 <img id="arrow" src="{{asset('images/arrow-right.png')}}" alt="flèche">
             </article>
         </div>
+        </div>
       </div>
   </section>
   
   
 <!--FOOTER-->
 
-  <footer>
-      <div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas">
-          <div class="row">
-              <div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
-                  <a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
-              </div>
-              <!--<span class="vertical-line"></span>-->
-              <div class="col-6">
-                  <div class="text-center mt-2 bg-white rounded-3" id="fondlogo">
-                      <img id="centrelogo" src="{{asset('images/kakimasu_logo.png')}}" alt="Logo">
-                  </div>
-                  <div class="" id="info">
-                      <ul class="text-white text-center text-decoration-underline">
-                          <li>Contactez nous</li>
-                          <li>Conditions générales de vente</li>
-                          <li>Politique de confidentialité</li>
-                          <li>Mentions légales</li>
-                      </ul>
-                  </div>
-              </div>            
-              <!--<span class="vertical-line"></span>-->  
-              <div class="col-3 mt-5 d-flex">
-                  <div class="ms-3">
-                    <a href="https://www.instagram.com/yami__draw/" target="_blank">
-                      <img class="button primary" id="insta" src="{{asset('images/Instagram_icon.png')}}" alt="insta">
-                    </a>
-                    </div>                      
-                  <div class="ms-3 me-3">
-                      <img id="twitter" src="{{asset('images/twitter_icon.png')}}" alt="twitter">
-                  </div>
-                  <div class="ms-1">
-                      <img id="facebook" src="{{asset('images/Facebook_icon.png')}}" alt="facebook">
-                  </div>
-              </div>
+<footer>
+    <div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas">
+      <div class="row">
+        <div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
+          <!-- Link to go to "info" page -->
+          <a href="{{ url('/info') }}" class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
+        </div>
+        <!--<span class="vertical-line"></span>-->
+        <div class="col-6">
+          <div class="text-center mt-2 bg-white rounded-3" id="fondlogo">
+            <!-- Logo -->
+            <img id="centrelogo" src="{{asset('images/kakimasu_logo.png')}}" alt="Logo">
           </div>
+          <div class="" id="info">
+            <ul class="text-white text-center text-decoration-underline">
+              <!-- List of information links -->
+              <li>Contactez nous</li>
+              <li>Conditions générales de vente</li>
+              <li>Politique de confidentialité</li>
+              <li>Mentions légales</li>
+            </ul>
+          </div>
+        </div>
+        <!--<span class="vertical-line"></span>-->
+        <div class="col-3 mt-5 d-flex">
+          <div class="ms-3">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/yami__draw/" target="_blank">
+              <img class="button primary" id="insta" src="{{asset('images/Instagram_icon.png')}}" alt="insta">
+            </a>
+          </div>
+          <div class="ms-3 me-3">
+            <!-- Twitter -->
+            <img id="twitter" src="{{asset('images/twitter_icon.png')}}" alt="twitter">
+          </div>
+          <div class="ms-1">
+            <!-- Facebook -->
+            <img id="facebook" src="{{asset('images/Facebook_icon.png')}}" alt="facebook">
+          </div>
+        </div>
       </div>
-  </footer>
+    </div>
+  </footer>  
   <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
   <script src="{{ asset('js/like.js') }}"></script>-->
   <script>

@@ -22,6 +22,8 @@ class UserAuthenticationController extends Controller
             'password' => Hash::make($password)
         ]);
 
+        $token = $user->createToken('auth_token')->plainTextToken;
+
 
         // Autres actions nécessaires après l'enregistrement de l'utilisateur
 

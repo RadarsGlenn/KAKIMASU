@@ -18,85 +18,95 @@
 <body>
 	<!--HEADER-->
 
-    <header>
-		<div class="bg-danger container-fluid" id="wrapperhaut2">
-		  <div>
-			<section class="pt-2 header">
-			  <div>
-				<div id="logocentre" class="text-center logo-container bg-white rounded-3">
-				  <img id="centrelogo2" src="{{ asset('images/kakimasu_logo.png') }}" alt="Logo">
-				</div>
-			  </div>    
-			</section>
-		  </div>
-		</div>
-	  </header>
-
-    <a href="{{ url('/home') }}" class="btn btn-secondary mt-3 ms-3">Retour</a>
-
-      <h2 class="text-center mt-3">QUI SOMMES NOUS</h2>
-
-      <h4 class="text-center mt-3">Kakimasu la nouvelle originalité</h4>
-
-      <div class="center-video">
-        <video width="640" height="280" controls autoplay>
-            <source src="{{ asset('videos/logo_animation.mp4') }}" type="video/mp4">
-            Votre navigateur ne supporte pas la lecture de vidéos HTML5.
-        </video>
+  <header>
+    <div class="bg-danger container-fluid" id="wrapperhaut2">
+      <div>
+        <section class="pt-2 header">
+          <div>
+            <!-- Logo container in the center -->
+            <div id="logocentre" class="text-center logo-container bg-white rounded-3">
+              <img id="centrelogo2" src="{{ asset('images/kakimasu_logo.png') }}" alt="Logo">
+            </div>
+          </div>    
+        </section>
       </div>
-      
-      <div class="ms-5 me-5">
-        <div class="ms-5 me-5">
-          <div class="ms-5 me-5 mt-3 mb-3">
-            <p class="text-center">KAKIMASU est une nouvelle entreprise qui a pour but d'aider les artistes en imprimant leurs dessins sur des t-shirts. 
-                Pour cela l'artiste crée son compte sur le site et y dépose ses dessins. Puis il détermine son prix (max 100€).  
-                Ils seront rémunéré 40% du prix du t-shirt lors qu'il sera acheté. </p>
+    </div>
+  </header>
+  
+  <!-- button to go to "home" page -->
+  <a href="{{ url('/home') }}" class="btn btn-secondary mt-3 ms-3">Retour</a>
+  
+  <!-- Title -->
+  <h2 class="text-center mt-3">QUI SOMMES NOUS</h2>
+  
+  <!-- Subtitle  -->
+  <h4 class="text-center mt-3">Kakimasu la nouvelle originalité</h4>
+  
+  <!-- Video section -->
+  <div class="center-video">
+    <video width="640" height="280" controls autoplay>
+      <source src="{{ asset('videos/logo_animation.mp4') }}" type="video/mp4">
+      Votre navigateur ne supporte pas la lecture de vidéos HTML5.
+    </video>
+  </div>
+  
+  <!-- Text section -->
+  <div class="ms-5 me-5">
+    <div class="ms-5 me-5">
+      <div class="ms-5 me-5 mt-3 mb-3">
+        <!-- Description of Kakimasu -->
+        <p class="text-center">KAKIMASU is a new company that aims to help artists by printing their drawings on t-shirts.
+          To do this, the artist creates an account on the site and uploads their drawings. They then determine the price (max 100€) for their artwork.
+          They will be paid 40% of the t-shirt price when it is purchased.</p>
         
-            <p class="text-center">Si vous cherchez un cadeau original pour un anniversaire par exemple, 
-                    un moyen de gagner de l'argent ou même essayez de vous lancer dans une carrière d'artiste, 
-                    vous êtes au bon endroit.</p>
+        <!-- Benefits of Kakimasu -->
+        <p class="text-center">If you are looking for an original gift for a birthday, a way to earn money, or even to start a career as an artist,
+          you are in the right place.</p>
+      </div>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas">
+      <div class="row">
+        <div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
+          <a class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
+        </div>
+        <!--<span class="vertical-line"></span>-->
+        <div class="col-6">
+          <!-- Logo section -->
+          <div class="text-center mt-2 bg-white rounded-3" id="fondlogo">
+            <img id="centrelogo" src="{{asset('images/kakimasu_logo.png')}}" alt="Logo">
+          </div>
+          <!-- Information section -->
+          <div class="" id="info">
+            <ul class="text-white text-center text-decoration-underline">
+              <li>Contact us</li>
+              <li>Terms and conditions</li>
+              <li>Privacy policy</li>
+              <li>Legal notices</li>
+            </ul>
+          </div>
+        </div>
+        <!--<span class="vertical-line"></span>-->  
+        <div class="col-3 mt-5 d-flex">
+          <!-- Social media icons -->
+          <div class="ms-3">
+            <a href="https://www.instagram.com/yami__draw/" target="_blank">
+              <img class="button primary" id="insta" src="{{asset('images/Instagram_icon.png')}}" alt="insta">
+            </a>
+          </div>                      
+          <div class="ms-3 me-3">
+            <img id="twitter" src="{{asset('images/twitter_icon.png')}}" alt="twitter">
+          </div>
+          <div class="ms-1">
+            <img id="facebook" src="{{asset('images/Facebook_icon.png')}}" alt="facebook">
           </div>
         </div>
       </div>
-      
-
-      <footer>
-        <div class="bg-danger container-fluid ps-5 pe-5" id="wrapperbas">
-            <div class="row">
-                <div class="col-3 bg-white col-4 rounded-3 mt-3 me-3" id="wrapperquisommesnous">
-                    <a class="fw-bold" id="quisommesnous">Qui sommes nous ?</a>
-                </div>
-                <!--<span class="vertical-line"></span>-->
-                <div class="col-6">
-                    <div class="text-center mt-2 bg-white rounded-3" id="fondlogo">
-                        <img id="centrelogo" src="{{asset('images/kakimasu_logo.png')}}" alt="Logo">
-                    </div>
-                    <div class="" id="info">
-                        <ul class="text-white text-center text-decoration-underline">
-                            <li>Contactez nous</li>
-                            <li>Conditions générales de vente</li>
-                            <li>Politique de confidentialité</li>
-                            <li>Mentions légales</li>
-                        </ul>
-                    </div>
-                </div>            
-                <!--<span class="vertical-line"></span>-->  
-                <div class="col-3 mt-5 d-flex">
-                    <div class="ms-3">
-                      <a href="https://www.instagram.com/yami__draw/" target="_blank">
-                        <img class="button primary" id="insta" src="{{asset('images/Instagram_icon.png')}}" alt="insta">
-                      </a>
-                      </div>                      
-                    <div class="ms-3 me-3">
-                        <img id="twitter" src="{{asset('images/twitter_icon.png')}}" alt="twitter">
-                    </div>
-                    <div class="ms-1">
-                        <img id="facebook" src="{{asset('images/Facebook_icon.png')}}" alt="facebook">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+  </footer>
+  
 
 
 
